@@ -1,0 +1,13 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; }
+body { margin: 0; background: #f4f7f5; color: #21352b; }
+header { padding: 1.25rem 2rem; background: #146b45; color: white; }
+header h1 { margin-top: 0; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+nav a { color: white; text-decoration: none; }
+main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+.card { padding: 1.5rem; background: white; border-radius: .75rem; box-shadow: 0 3px 12px #0001; }
+form { display: grid; max-width: 24rem; gap: 1rem; }
+label { display: grid; gap: .35rem; }
+input, button { padding: .65rem; font: inherit; }
+button { cursor: pointer; background: #146b45; color: white; border: 0; border-radius: .35rem; }
+
