@@ -3,7 +3,12 @@
 {% block content %}
   <section class="card">
     <h2>Panel principal</h2>
-    <p>Proyecto inicializado correctamente. Seleccione un módulo para comenzar.</p>
+    <p>Resumen actual del inventario.</p>
+    <div class="metricas">
+      <article><strong>{{ total_productos }}</strong><span>Productos</span></article>
+      <article><strong>{{ total_stock_bajo }}</strong><span>Con stock mínimo</span></article>
+      <article><strong>{{ total_vencimientos }}</strong><span>Próximos a vencer</span></article>
+    </div>
   </section>
 {% endblock %}
 

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Salida | Botica Salud & Vida{% endblock %}
+{% block content %}<section class="card"><h2>Registrar salida</h2><form method="post">
+<label>Lote <select name="lote_id" required>{% for lote in lotes if lote.cantidad > 0 %}<option value="{{ lote.id }}">{{ lote.producto }} · {{ lote.codigo }} · {{ lote.cantidad }} unidades</option>{% endfor %}</select></label>
+<label>Cantidad <input name="cantidad" type="number" min="1" required></label><label>Observación <textarea name="observacion" rows="2"></textarea></label><button>Registrar salida</button></form></section>{% endblock %}

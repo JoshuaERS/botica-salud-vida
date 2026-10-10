@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Entrada | Botica Salud & Vida{% endblock %}
+{% block content %}<section class="card"><h2>Registrar entrada</h2><form method="post">
+<label>Producto <select name="producto_id" required>{% for producto in productos %}<option value="{{ producto.id }}">{{ producto.nombre }}</option>{% endfor %}</select></label>
+<label>Código de lote <input name="codigo_lote" required></label><label>Fecha de vencimiento <input name="fecha_vencimiento" type="date" required></label>
+<label>Cantidad <input name="cantidad" type="number" min="1" required></label><label>Observación <textarea name="observacion" rows="2"></textarea></label><button>Registrar entrada</button></form></section>{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Alertas | Botica Salud & Vida{% endblock %}
+{% block content %}<section class="card"><h2>Alertas</h2>
+<h3>Stock mínimo</h3><div class="tabla-contenedor"><table><thead><tr><th>Producto</th><th>Stock actual</th><th>Mínimo</th></tr></thead><tbody>{% for producto in stock_bajo %}<tr><td>{{ producto.nombre }}</td><td>{{ producto.stock_actual }}</td><td>{{ producto.stock_minimo }}</td></tr>{% else %}<tr><td colspan="3">No hay alertas de stock.</td></tr>{% endfor %}</tbody></table></div>
+<h3>Vencimientos en {{ dias }} días</h3><div class="tabla-contenedor"><table><thead><tr><th>Producto</th><th>Lote</th><th>Fecha</th><th>Cantidad</th></tr></thead><tbody>{% for lote in vencimientos %}<tr><td>{{ lote.producto }}</td><td>{{ lote.codigo }}</td><td>{{ lote.fecha_vencimiento }}</td><td>{{ lote.cantidad }}</td></tr>{% else %}<tr><td colspan="4">No hay vencimientos próximos.</td></tr>{% endfor %}</tbody></table></div>
+</section>{% endblock %}

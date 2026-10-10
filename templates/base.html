@@ -19,6 +19,15 @@
     </nav>
   </header>
   <main>{% block content %}{% endblock %}</main>
+  {% with mensajes = get_flashed_messages(with_categories=true) %}
+    {% if mensajes %}
+      <aside class="mensajes" aria-live="polite">
+        {% for categoria, mensaje in mensajes %}
+          <p class="mensaje {{ categoria }}">{{ mensaje }}</p>
+        {% endfor %}
+      </aside>
+    {% endif %}
+  {% endwith %}
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Inventario | Botica Salud & Vida{% endblock %}
+{% block content %}<section class="card">
+<div class="titulo-acciones"><h2>Inventario</h2><div><a class="boton" href="{{ url_for('inventario.entrada') }}">Registrar entrada</a> <a class="boton secundario" href="{{ url_for('inventario.salida') }}">Registrar salida</a></div></div>
+<h3>Lotes disponibles</h3><div class="tabla-contenedor"><table><thead><tr><th>Producto</th><th>Lote</th><th>Vencimiento</th><th>Cantidad</th></tr></thead><tbody>{% for lote in lotes %}<tr><td>{{ lote.producto }}</td><td>{{ lote.codigo }}</td><td>{{ lote.fecha_vencimiento }}</td><td>{{ lote.cantidad }}</td></tr>{% else %}<tr><td colspan="4">No hay lotes registrados.</td></tr>{% endfor %}</tbody></table></div>
+<h3>Últimos movimientos</h3><div class="tabla-contenedor"><table><thead><tr><th>Fecha</th><th>Producto</th><th>Lote</th><th>Tipo</th><th>Cantidad</th></tr></thead><tbody>{% for movimiento in movimientos %}<tr><td>{{ movimiento.creado_en }}</td><td>{{ movimiento.producto }}</td><td>{{ movimiento.lote }}</td><td>{{ movimiento.tipo }}</td><td>{{ movimiento.cantidad }}</td></tr>{% else %}<tr><td colspan="5">No hay movimientos registrados.</td></tr>{% endfor %}</tbody></table></div>
+</section>{% endblock %}
